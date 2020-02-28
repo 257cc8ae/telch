@@ -1,0 +1,94 @@
+:root {
+    --accent: #1a73e8;
+    --bg: #ffffff;
+}
+
+button:focus {
+    outline: none;
+}
+
+.btn-f {
+    background: var(--accent);
+    border: none;
+    color: #fff;
+    padding: 9px 23px;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: .25px;
+    line-height: 16px;
+    text-align: center;
+    vertical-align: middle;
+    box-sizing: border-box;
+    transition: all 300ms 0s ease;
+    cursor: pointer;
+}
+
+.btn-f:hover {
+    background: #2B7DE9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+}
+
+.btn-s {
+    background: var(--bg);
+    border: 1px #dadce0 solid;
+    color: var(--accent);
+    padding: 9px 23px;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: .25px;
+    line-height: 16px;
+    text-align: center;
+    vertical-align: middle;
+    box-sizing: border-box;
+    transition: all 800ms 0s ease;
+    cursor: pointer;
+}
+
+.btn-s:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+}
+
+.btn-t {
+    background: var(--bg);
+    border: none;
+    color: var(--accent);
+    padding: 9px 23px;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: .25px;
+    line-height: 16px;
+    text-align: center;
+    vertical-align: middle;
+    box-sizing: border-box;
+    transition: all 800ms 0s ease;
+    cursor: pointer;
+}
+
+.btn-t:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+}
+
+.ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple .ripple-active {
+    position: absolute;
+    pointer-events: none;
+    background: rgb(196, 196, 196);
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple .8s;
+    opacity: .3;
+}
+
+@keyframes ripple {
+    to {
+        opacity: 0;
+        transform: scale(2.0);
+    }
+}
