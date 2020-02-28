@@ -1,9 +1,12 @@
 :root {
     --accent: #1a73e8;
     --bg: #ffffff;
+    --sub-bg: #F8F9FA;
+    --color: #222222;
+    --sub-color: #3C4043;
 }
 
-button:focus {
+button:focus,input:focus {
     outline: none;
 }
 
@@ -68,6 +71,22 @@ button:focus {
 }
 
 .btn-t:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+}
+
+.input-f{
+    border: none;
+    background: var(--sub-bg);
+    padding: 9px 10px;
+    border-radius: 4px 4px 0 0;
+    width: 50%;
+    border-bottom: 2px solid #dadce0;
+    transition: all 800ms 0s ease;
+}
+
+.input-f:focus{
+    background: var(--bg);
+    border-bottom-color: var(--accent);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
 }
 
