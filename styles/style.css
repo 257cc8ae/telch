@@ -104,11 +104,11 @@ button:focus, input:focus {
     border-color: var(--accent);
 }
 
-.cb {
+.cb,.rb {
     display: none;
 }
 
-.cb+.cb-i {
+.cb+.cb-i,.rb+.rb-i {
     position: relative;
     vertical-align: -5px;
 }
@@ -119,6 +119,11 @@ button:focus, input:focus {
     cursor: pointer;
 }
 
+.rb-t{
+    vertical-align: 8px;
+    user-select: none;
+    cursor: pointer;
+}
 
 .cb+.cb-i:before {
     content: "check";
@@ -126,7 +131,22 @@ button:focus, input:focus {
     color: var(--bg);
     font-size: 22px;
     border: 2px solid var(--b-color);
-    border-radius: 2px;
+    border-radius: 5px;
+    transition: all 400ms 0s ease;
+}
+
+.rb+.rb-i:before {
+    content: "radio_button_unchecked";
+    font-family: "Material Icons";
+    font-size: 30px;
+    color: var(--b-color);
+    transition: all 400ms 0s ease;
+}
+
+.rb:checked+.rb-i:before {
+    content: "radio_button_checked";
+    font-family: "Material Icons";
+    color: var(--accent);
 }
 
 .cb:checked+.cb-i:before {
