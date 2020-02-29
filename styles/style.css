@@ -4,9 +4,10 @@
     --sub-bg: #F8F9FA;
     --color: #222222;
     --sub-color: #3C4043;
+    --b-color: #dadce0;
 }
 
-button:focus,input:focus {
+button:focus, input:focus {
     outline: none;
 }
 
@@ -34,7 +35,7 @@ button:focus,input:focus {
 
 .btn-s {
     background: var(--bg);
-    border: 1px #dadce0 solid;
+    border: 1px var(--b-color) solid;
     color: var(--accent);
     padding: 9px 23px;
     border-radius: 4px;
@@ -74,20 +75,76 @@ button:focus,input:focus {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
 }
 
-.input-f{
+.input-f {
     border: none;
     background: var(--sub-bg);
-    padding: 9px 10px;
+    padding: 15px 10px;
     border-radius: 4px 4px 0 0;
-    width: 50%;
-    border-bottom: 2px solid #dadce0;
+    border-bottom: 2px solid var(--b-color);
     transition: all 800ms 0s ease;
+    color: var(--color);
 }
 
-.input-f:focus{
+.input-f:focus {
     background: var(--bg);
     border-bottom-color: var(--accent);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+}
+
+.input-s {
+    border: 2px solid var(--b-color);
+    background: var(--bg);
+    padding: 15px 10px;
+    border-radius: 4px;
+    transition: all 400ms 0s ease;
+    color: var(--color);
+}
+
+.input-s:focus {
+    border-color: var(--accent);
+}
+
+.cb {
+    display: none;
+}
+
+.cb+.cb-i {
+    position: relative;
+    vertical-align: -5px;
+}
+
+.cb-t{
+    vertical-align: 5px;
+    user-select: none;
+    cursor: pointer;
+}
+
+
+.cb+.cb-i:before {
+    content: "check";
+    font-family: "Material Icons";
+    color: var(--bg);
+    font-size: 22px;
+    border: 2px solid var(--b-color);
+    border-radius: 2px;
+}
+
+.cb:checked+.cb-i:before {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.w-50 {
+    width: 50%;
+}
+
+.w-25 {
+    width: 25%;
 }
 
 .ripple {
