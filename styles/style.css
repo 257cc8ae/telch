@@ -7,7 +7,7 @@
     --b-color: #dadce0;
 }
 
-button:focus, input:focus {
+button:focus, input:focus, textarea:focus {
     outline: none;
 }
 
@@ -152,6 +152,20 @@ button:focus, input:focus {
 .cb:checked+.cb-i:before {
     background: var(--accent);
     color: #fff;
+    border-color: var(--accent);
+}
+
+.ta-s{
+    border: 2px solid var(--b-color);
+    background: var(--bg);
+    padding: 15px 10px;
+    border-radius: 4px;
+    transition: all 400ms 0s ease;
+    color: var(--color);
+    resize: none;
+}
+
+.ta-s:focus {
     border-color: var(--accent);
 }
 
