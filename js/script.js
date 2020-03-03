@@ -33,3 +33,12 @@
     });
 
 })();
+
+function LoadStyleSheet(fileURL) {
+    let link = document.createElement('link');
+    link.href = fileURL;
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    let head = document.getElementsByTagName('head')[0];
+    head.appendChild(link);
+}
