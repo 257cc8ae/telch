@@ -185,6 +185,18 @@ button:focus, input:focus, textarea:focus {
     color: rgb(224, 36, 94);
 }
 
+.center{
+    text-align: center;
+}
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
 .ripple {
     position: relative;
     overflow: hidden;
