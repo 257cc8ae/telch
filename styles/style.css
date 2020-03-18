@@ -2,7 +2,7 @@
     --accent: #1a73e8;
     --bg: #ffffff;
     --sub-bg: #F8F9FA;
-    --color: #222222;
+    --color: #202124;
     --sub-color: #3C4043;
     --b-color: #dadce0;
 }
@@ -185,21 +185,72 @@ button:focus, input:focus, textarea:focus {
     color: #d93025;
 }
 
-.center{
-    text-align: center;
+.color {
+    color: var(--color);
 }
 
-.left {
-    text-align: left;
+.sub-color{
+    color: var(--sub-color);
 }
 
-.right {
-    text-align: right;
+.not-margin{
+    margin: 0;
+}
+
+.float-left{
+    float: left;
 }
 
 .ripple {
     position: relative;
     overflow: hidden;
+}
+
+.center {
+    text-align: center;
+}
+
+.left { 
+    text-align: left;
+}
+
+.right{
+    text-align: right;
+}
+
+.not-text-decoration { 
+    text-decoration: none;
+}
+
+.error-card{
+    background: #B00020;
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);    
+}
+
+.error-card li {
+    list-style: none;
+}
+
+.error-card ul{
+    margin: 5px 0;
+}
+
+.error-card h2{
+    color: #fff;
+    text-align: left;
+    margin: 5px;
+    line-height: 33px;
+    font-size: 20px;
+    vertical-align: bottom;
+}
+
+.error-card h2 i {
+    height: 33px;
+    font-size: 33px;
+    vertical-align: bottom;
 }
 
 .ripple .ripple-active {
