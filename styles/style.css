@@ -1,10 +1,26 @@
-:root {
+body[theme="light"] {
     --accent: #1a73e8;
     --bg: #ffffff;
-    --sub-bg: #F8F9FA;
+    --sub-bg: #EDEDED;
     --color: #202124;
     --sub-color: #3C4043;
     --b-color: #dadce0;
+}
+
+
+body[theme="dark"]{
+    --accent: #1a73e8;
+    --bg: #121212;
+    --sub-bg: #1d1d1d;
+    --color: #ffffff;
+    --sub-color: #aaaaaa;
+    --b-color: #383838;
+}
+
+html,body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--color);
 }
 
 button:focus, input:focus, textarea:focus {
@@ -50,8 +66,13 @@ button:focus, input:focus, textarea:focus {
     cursor: pointer;
 }
 
-.btn-s:hover {
+.btn-s:hover,.btn-t:hover {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+    background: var(--sub-bg);
+}
+
+.btn-s:active,.btn-t:active {
+    background: var(--b-color);
 }
 
 .btn-t {
@@ -69,10 +90,6 @@ button:focus, input:focus, textarea:focus {
     box-sizing: border-box;
     transition: all 800ms 0s ease;
     cursor: pointer;
-}
-
-.btn-t:hover {
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
 }
 
 .input-f {
@@ -98,28 +115,28 @@ button:focus, input:focus, textarea:focus {
     border-radius: 4px;
     transition: all 400ms 0s ease;
     color: var(--color);
+    font-size: 13.4px;
 }
 
 .input-s:focus {
     border-color: var(--accent);
 }
 
-.cb,.rb {
+.cb, .rb {
     display: none;
 }
 
-.cb+.cb-i,.rb+.rb-i {
+.cb+.cb-i, .rb+.rb-i {
     position: relative;
     vertical-align: -5px;
 }
 
-.cb-t{
-    vertical-align: 5px;
+.cb-t {
     user-select: none;
     cursor: pointer;
 }
 
-.rb-t{
+.rb-t {
     vertical-align: 8px;
     user-select: none;
     cursor: pointer;
@@ -155,7 +172,7 @@ button:focus, input:focus, textarea:focus {
     border-color: var(--accent);
 }
 
-.ta-s{
+.ta-s {
     border: 2px solid var(--b-color);
     background: var(--bg);
     padding: 15px 10px;
@@ -181,7 +198,7 @@ button:focus, input:focus, textarea:focus {
     width: 25%;
 }
 
-.alert{
+.alert {
     color: #d93025;
 }
 
@@ -189,16 +206,20 @@ button:focus, input:focus, textarea:focus {
     color: var(--color);
 }
 
-.sub-color{
+.sub-color {
     color: var(--sub-color);
 }
 
-.not-margin{
+.not-margin {
     margin: 0;
 }
 
-.float-left{
+.float-left {
     float: left;
+}
+
+.float-right{
+    float: right;
 }
 
 .ripple {
@@ -210,35 +231,35 @@ button:focus, input:focus, textarea:focus {
     text-align: center;
 }
 
-.left { 
+.left {
     text-align: left;
 }
 
-.right{
+.right {
     text-align: right;
 }
 
-.not-text-decoration { 
+.not-text-decoration {
     text-decoration: none;
 }
 
-.error-card{
+.error-card {
     background: #B00020;
     color: #ffffff;
     border-radius: 5px;
     padding: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);    
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
 }
 
 .error-card li {
     list-style: none;
 }
 
-.error-card ul{
+.error-card ul {
     margin: 5px 0;
 }
 
-.error-card h2{
+.error-card h2 {
     color: #fff;
     text-align: left;
     margin: 5px;
@@ -251,6 +272,91 @@ button:focus, input:focus, textarea:focus {
     height: 33px;
     font-size: 33px;
     vertical-align: bottom;
+}
+
+.d-bg {
+    background-color: var(--bg);
+}
+
+.sub-bg {
+    background-color: var(--sub-bg);
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.502);
+    display: none;
+}
+
+.modal[open="true"] {
+    display: block;
+}
+
+.modal .modal-main {
+    width: calc(95% - 20px);
+    max-width: 860px;
+    background-color: var(--bg);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.modal .modal-title{
+    font-size: 16pt;
+    color: var(--color);
+    border-bottom: 1px solid var(--b-color);
+    margin-bottom: 10px;
+}
+
+.toggle{
+    width: 36px;
+    height: 14px;
+    background: #C4C5C9;
+    border-radius: 15px;
+    position: relative;
+}
+body[theme="dark"] .toggle{
+    background: #242526;
+}
+.toggle-c{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: -3px;
+    background: var(--sub-color);
+    transition: all 500ms 0s ease;
+}
+
+.toggle[active="false"] .toggle-c{
+    position: absolute;
+    left: 0;
+    top: -3px;
+    background: var(--sub-color);
+}
+
+.toggle[active="true"] .toggle-c{
+    position: absolute;
+    left: 16px;
+    top: -3px;
+    background: var(--accent);
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+.not-user-select{
+    user-select: none;
 }
 
 .ripple .ripple-active {

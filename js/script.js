@@ -41,4 +41,24 @@ function LoadStyleSheet(fileURL) {
     link.type = 'text/css';
     let head = document.getElementsByTagName('head')[0];
     head.appendChild(link);
-}
+};
+var theme = localStorage.getItem("theme");
+if (theme) {
+    document.body.setAttribute("theme", theme);
+} else {
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.setAttribute("theme", "dark");
+    } else {
+        document.body.setAttribute("theme", "light");
+    };
+};
+function changeTheme() {
+    let theme = document.body.getAttribute("theme");
+    if (theme == "dark") {
+        document.body.setAttribute("theme", "light");
+        localStorage.setItem("theme", "light");
+    } else {
+        document.body.setAttribute("theme", "dark");
+        localStorage.setItem("theme", "dark");
+    };
+};
